@@ -1,155 +1,549 @@
 <!DOCTYPE html>
-<!--
-  ================================================================
-  READ THIS BEFORE YOU PASTE ANYTHING
-
-  When Gemini gives you a page, you do NOT paste it into a part of
-  this file. You replace the entire file.
-
-  Click into the editor, press Ctrl+A (Cmd+A on Mac), press Delete,
-  then paste. Everything here is meant to be thrown away.
-
-  Do that only AFTER your live link works. Get the link first.
-  ================================================================
--->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My first site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1d30;
-    --card: #142a44;
-    --line: #27466a;
-    --aqua: #6de1d7;
-    --text: #ffffff;
-    --muted: #94a9bf;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--navy);
-    color: var(--text);
-    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 6vh 20px;
-  }
-  main { width: 100%; max-width: 640px; }
-  .badge {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: clamp(38px, 9vw, 68px);
-    letter-spacing: -0.05em;
-    line-height: 1.02;
-    margin: 0 0 8px;
-  }
-  .name {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: clamp(18px, 4vw, 24px);
-    letter-spacing: -0.04em;
-    color: var(--aqua);
-    margin: 0 0 24px;
-  }
-  p.lead { font-size: 18px; color: var(--muted); margin: 0 0 34px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px 28px;
-    margin-bottom: 18px;
-  }
-  .card h2 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin: 0 0 16px;
-  }
-  ol { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 12px; color: var(--muted); }
-  li:last-child { margin-bottom: 0; }
-  li b { color: var(--text); font-weight: 700; }
-  code {
-    font-family: ui-monospace, "SF Mono", Consolas, monospace;
-    font-size: 0.92em;
-    background: #0a1727;
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    padding: 1px 6px;
-    color: var(--aqua);
-  }
-  a { color: var(--aqua); }
-  footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #6e839a;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Tullis | Marketing & Social Strategy Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfbf9;
+            --card-bg: #ffffff;
+            --accent: #d96b43;
+            --accent-light: #fbebe6;
+            --text-dark: #1e2022;
+            --text-muted: #5a6065;
+            --border: #eae8e3;
+            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .name-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+        }
+
+        .name-title p {
+            font-size: 1.15rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: #c45a33;
+            color: #ffffff;
+        }
+
+        .hero-bio {
+            color: var(--text-muted);
+            font-size: 1rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        /* Metrics Strip */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Layouts */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border);
+            margin-left: 0.5rem;
+        }
+
+        /* Work Samples Section */
+        .samples-intro {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .sample-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .sample-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .sample-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .sample-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .timeline-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .job-company {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--bg-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-body li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-body li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Two Column Grid for Education & Skills */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            header {
+                padding: 1.5rem;
+            }
+            .name-title h1 {
+                font-size: 2rem;
+            }
+            .hero-top {
+                flex-direction: column;
+            }
+            .contact-links {
+                width: 100%;
+            }
+            .btn {
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<main>
 
-  <span class="badge">Cal Poly Vibe Coding &middot; Session 01</span>
+    <div class="container">
+        
+        <!-- Hero Header -->
+        <header>
+            <div class="hero-top">
+                <div class="name-title">
+                    <h1>Ruby Tullis</h1>
+                    <p>Marketing & Social Media Strategist</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:rubytullis@icloud.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://www.linkedin.com/in/ruby-tullis" target="_blank" rel="noopener" class="btn">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="hero-bio">
+                <p>Rising Junior at California Polytechnic State University studying Sociology with a concentration in Social Marketing. Experienced in creating branded digital media, executing strategic social campaigns, conducting qualitative market research, and engaging target audiences through data-driven storytelling.</p>
+            </div>
+        </header>
 
-  <h1>It&rsquo;s live.</h1>
+        <!-- Quick Campaign Stats -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">31,000+</div>
+                <div class="metric-label">Content Views Generated</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">4,600+</div>
+                <div class="metric-label">Accounts Reached</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">15+</div>
+                <div class="metric-label">Branded Social Posts</div>
+            </div>
+        </div>
 
-  <!-- Step 5: change the name below to yours, then commit. -->
-  <p class="name">Built by Ruby Tullis</p>
+        <!-- Work Samples Section -->
+        <section>
+            <h2 class="section-title">Ruby Tullis Work Samples</h2>
+            <p class="samples-intro">Below are a few selected examples of my social media and marketing work, highlighting campaign execution, prospective student engagement, and brand storytelling.</p>
+            
+            <div class="samples-grid">
+                
+                <div class="sample-card">
+                    <div>
+                        <div class="sample-tag">Instagram Content</div>
+                        <div class="sample-title">CIEE Study Abroad Ambassador Campaign</div>
+                        <div class="sample-desc">Created social media content to promote CIEE study abroad programs, engage prospective students, and follow established brand guidelines.</div>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DXxEB9oo3BP/" target="_blank" rel="noopener" class="btn">View Reel</a>
+                </div>
 
-  <p class="lead">
-    This page is on the internet. Anyone you send this link to can open it,
-    on any device, right now. You made that happen in about five minutes.
-  </p>
+                <div class="sample-card">
+                    <div>
+                        <div class="sample-tag">Instagram Content</div>
+                        <div class="sample-title">Study Abroad Feature Reel</div>
+                        <div class="sample-desc">Dynamic short-form reel highlighting authentic student living and cultural immersion experiences in Rome, Italy.</div>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DYj2TN2ozQz/" target="_blank" rel="noopener" class="btn">View Reel</a>
+                </div>
 
-  <div class="card">
-    <h2>Three things, in this order</h2>
-    <ol>
-      <li><b>Put your name on it.</b> Edit <code>index.html</code>, change
-        YOUR NAME HERE above, commit, refresh this page.</li>
-      <li><b>Submit this link.</b> Go to
-        <a href="https://www.calpolyvibecoding.com/">calpolyvibecoding.com</a>,
-        make an account, and paste this URL in. That is how you get counted,
-        and how Claude seats get assigned.</li>
-      <li><b>Then build.</b> Open Gemini, get a page, and replace this entire
-        file with it.</li>
-    </ol>
-  </div>
+                <div class="sample-card">
+                    <div>
+                        <div class="sample-tag">Instagram Content</div>
+                        <div class="sample-title">Brand Awareness Carousel</div>
+                        <div class="sample-desc">Visual narrative post crafted in accordance with program messaging and required hashtag strategy to maximize reach.</div>
+                    </div>
+                    <a href="https://www.instagram.com/p/DXE5MZDiKdC/" target="_blank" rel="noopener" class="btn">View Post</a>
+                </div>
 
-  <div class="card">
-    <h2>How to replace this page</h2>
-    <ol>
-      <li>Copy what Gemini gives you with the <b>copy button</b> on the code
-        block. Do not click and drag.</li>
-      <li>Open <code>index.html</code> here and click the pencil icon.</li>
-      <li><b>Ctrl+A</b> (<b>Cmd+A</b> on Mac), then <b>Delete</b>. All of it.
-        Yes, really.</li>
-      <li>Paste, commit, refresh.</li>
-    </ol>
-  </div>
+                <div class="sample-card">
+                    <div>
+                        <div class="sample-tag">Instagram Content</div>
+                        <div class="sample-title">Student Engagement Spotlight</div>
+                        <div class="sample-desc">Targeted engagement video designed to address prospective student questions and build online community.</div>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DZD0MLRoZqh/" target="_blank" rel="noopener" class="btn">View Reel</a>
+                </div>
 
-  <footer>
-    Nothing on this page is precious. It exists so the link has something to
-    show before you have something of your own.
-  </footer>
+                <div class="sample-card">
+                    <div>
+                        <div class="sample-tag">Instagram Content</div>
+                        <div class="sample-title">Program Outreach Reel</div>
+                        <div class="sample-desc">High-performing video content leveraging trend-aware audio and partner tags to extend program visibility.</div>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DXZguxMIFv5/" target="_blank" rel="noopener" class="btn">View Reel</a>
+                </div>
 
-</main>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section>
+            <h2 class="section-title">Marketing Experience</h2>
+            
+            <div class="timeline">
+                
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="job-title">Study Abroad Ambassador</div>
+                            <div class="job-company">CIEE Study Abroad • Rome, Italy</div>
+                        </div>
+                        <div class="job-date">Spring & Summer 2026</div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Promoted CIEE study abroad programs through strategic social media marketing and student outreach.</li>
+                            <li>Created and managed a dedicated Instagram account, growing the audience to 507 followers.</li>
+                            <li>Produced 15+ branded social media posts across two study abroad terms, generating 31,000+ views and reaching 4,600+ accounts.</li>
+                            <li>Executed content in accordance with CIEE brand guidelines, incorporating required messaging, hashtags, and partner tags to maximize program visibility.</li>
+                            <li>Represented CIEE by sharing authentic study abroad experiences and engaging directly with prospective students.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="job-title">Marketing and Market Research Intern</div>
+                            <div class="job-company">Made in Italy Pubblicità & Marketing • Rome, Italy</div>
+                        </div>
+                        <div class="job-date">Summer 2026</div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Supported marketing and consumer research initiatives for an Italy-based advertising and market research firm.</li>
+                            <li>Conducted and documented in-person focus groups, collecting qualitative data and organizing key research findings.</li>
+                            <li>Analyzed consumer feedback to identify market trends and generate actionable insights for branding strategies.</li>
+                            <li>Collaborated with an international team on branding and strategic marketing projects in a cross-cultural professional environment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education & Skills Two-Column Grid -->
+        <div class="two-col">
+            
+            <div class="info-card">
+                <h3>Education & Academic Achievements</h3>
+                <p><strong>California Polytechnic State University</strong><br>San Luis Obispo, CA</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">Bachelor of Arts in Sociology<br><em>Concentration in Social Marketing</em></p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem;"><strong>Expected Graduation:</strong> June 2028</p>
+                <p style="font-size: 0.9rem;"><strong>GPA:</strong> 3.88 (Dean's List & President's List)</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Core Skills & Capabilities</h3>
+                
+                <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">Marketing & Strategy</p>
+                <div class="tag-cloud" style="margin-bottom: 1rem;">
+                    <span class="tag">Brand Awareness</span>
+                    <span class="tag">Audience Engagement</span>
+                    <span class="tag">Social Media Marketing</span>
+                    <span class="tag">Qualitative Research</span>
+                    <span class="tag">Event Promotion</span>
+                    <span class="tag">Strategic Communication</span>
+                </div>
+
+                <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">Software & Tools</p>
+                <div class="tag-cloud">
+                    <span class="tag">Canva</span>
+                    <span class="tag">Google Workspace</span>
+                    <span class="tag">Microsoft Excel</span>
+                    <span class="tag">PowerPoint</span>
+                    <span class="tag">SPSS</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Leadership & Community Involvement -->
+        <section style="margin-top: 1.5rem;">
+            <div class="info-card">
+                <h3>Leadership & Campus Involvement</h3>
+                <div class="timeline-body">
+                    <ul>
+                        <li><strong>Cal Poly American Marketing Association (2025–Present):</strong> Participate in strategy development, sales training, and branding workshops with industry leaders.</li>
+                        <li><strong>Delta Gamma Sorority - Banner Committee (2024–Present):</strong> Support visual branding and promotional efforts for philanthropy and community engagement initiatives.</li>
+                        <li><strong>Service For Sight & Blind Children Center (2024–Present):</strong> Organize fundraising campaigns and assemble care packages supporting visually impaired youth.</li>
+                        <li><strong>Poly Pups & Guide Dogs for the Blind (2024–Present):</strong> Assist in socializing and training service dogs for individuals with visual impairments.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Ruby Tullis • Portfolio & Marketing Profile</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
