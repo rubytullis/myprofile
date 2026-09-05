@@ -4,30 +4,61 @@ HTML
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruby Tullis | Portfolio</title>
+  <title>Ruby Tullis | Marketing & Social Strategy Portfolio</title>
+  
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-color: #fcf8f8;            /* Warm off-white background */
-      --card-bg: #ffffff;             /* Crisp white card background */
-      --text-primary: #1f1a1c;        /* Deep charcoal for body text */
-      --text-muted: #6b5e65;          /* Soft mauve-gray for secondary text */
-      --accent-primary: #7d3f58;      /* Deep plum/berry accent matching headshot */
-      --accent-soft: #f2e6ea;         /* Light blush tint for tags & borders */
-      --accent-gold: #d4af37;         /* Warm gold accent */
+      --bg-color: #fdfbfb;            /* Soft off-white */
+      --card-bg: #ffffff;             /* Clean white */
+      --text-primary: #211c1d;        /* Deep charcoal */
+      --text-muted: #6e6368;          /* Warm gray */
+      --accent-primary: #7d3f58;      /* Elegant plum / berry accent */
+      --accent-hover: #632f44;        /* Darker plum for buttons */
+      --accent-soft: #f4eaed;         /* Very soft blush tint */
+      --accent-gold: #d4af37;         /* Subtle warm gold */
+      --border-color: #efe5e8;        /* Soft border shade */
     }
 
     body {
       background-color: var(--bg-color);
       color: var(--text-primary);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--accent-primary) !important;
+      letter-spacing: -0.5px;
+    }
+    .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: var(--accent-primary) !important;
     }
 
     /* Hero Section */
     .hero-section {
-      padding: 60px 0;
-      border-bottom: 1px solid var(--accent-soft);
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .profile-photo {
@@ -35,15 +66,28 @@ HTML
       height: 220px;
       object-fit: cover;
       border-radius: 50%;
-      border: 4px solid var(--card-bg);
-      box-shadow: 0 8px 20px rgba(125, 63, 88, 0.15);
+      border: 5px solid var(--card-bg);
+      box-shadow: 0 12px 30px rgba(125, 63, 88, 0.15);
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+    }
+
+    .hero-subtitle {
+      color: var(--accent-primary);
+      font-weight: 600;
+      font-size: 1.2rem;
     }
 
     .section-title {
       color: var(--accent-primary);
       font-weight: 700;
       position: relative;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
+      margin-bottom: 30px;
     }
 
     .section-title::after {
@@ -51,18 +95,19 @@ HTML
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 50px;
+      width: 45px;
       height: 3px;
       background-color: var(--accent-gold);
+      border-radius: 2px;
     }
 
-    /* Category Badges */
+    /* Custom Badges & Tags */
     .badge-custom {
       display: inline-block;
       padding: 6px 14px;
       border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.75rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
@@ -78,36 +123,50 @@ HTML
       color: #2b5288;
     }
 
-    /* Work Sample Cards */
-    .work-sample-card {
+    .skill-tag {
+      background-color: #f3f3f5;
+      color: var(--text-primary);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+      margin: 3px;
+    }
+
+    /* Cards */
+    .custom-card {
       background: var(--card-bg);
-      border: 1px solid var(--accent-soft);
-      border-radius: 12px;
-      padding: 28px;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
       margin-bottom: 28px;
-      box-shadow: 0 4px 12px rgba(125, 63, 88, 0.04);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .work-sample-card:hover {
+    .custom-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(125, 63, 88, 0.08);
+      box-shadow: 0 10px 28px rgba(125, 63, 88, 0.08);
     }
 
+    /* Buttons */
     .btn-accent {
       background-color: var(--accent-primary);
       color: #ffffff;
       border: none;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       transition: background-color 0.2s ease;
     }
 
     .btn-accent:hover {
-      background-color: #612f43;
+      background-color: var(--accent-hover);
       color: #ffffff;
     }
 
@@ -115,11 +174,13 @@ HTML
       background-color: transparent;
       color: var(--accent-primary);
       border: 1px solid var(--accent-primary);
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       transition: all 0.2s ease;
     }
 
@@ -134,85 +195,253 @@ HTML
       gap: 12px;
       margin-top: 16px;
     }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: var(--accent-soft);
+      padding: 60px 0;
+      margin-top: 80px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      height: 100%;
+    }
+
+    .contact-link {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Hero Header -->
-  <header class="hero-section">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ruby Tullis</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-links navbar-nav ms-auto gap-3">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Work Samples</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#leadership">Involvement</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Header Section -->
+  <header class="hero-section" id="about">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4 text-center mb-4 mb-md-0">
           <img src="headshot.jpg" alt="Ruby Tullis Profile Headshot" class="profile-photo">
         </div>
         <div class="col-md-8">
-          <h1 class="display-4 fw-bold mb-2">Ruby Tullis</h1>
-          <p class="lead text-muted mb-3">Marketing Specialist | Market Research & Digital Content Strategy</p>
-          <p>
-            Welcome to my portfolio! Here you'll find a collection of my professional work samples, ranging from international market analysis decks to social media campaign strategy.
+          <h1 class="display-4 hero-title">Ruby Tullis</h1>
+          <p class="hero-subtitle mb-2">Social Marketing & Brand Strategy Specialist</p>
+          <p class="text-muted fw-medium mb-3">
+            <i class="bi bi-mortarboard-fill me-1"></i> California Polytechnic State University, San Luis Obispo <br>
+            <i class="bi bi-award-fill me-1"></i> B.A. Sociology: Social Marketing Concentration | GPA: 3.88 (Dean's List & President's List)
           </p>
+          <p>
+            Welcome to my portfolio! I specialize in market research, digital content strategy, and social media campaigns that drive genuine audience engagement. With experience spanning international market analysis in Rome to ambassador campaign growth, I merge qualitative research with creative storytelling.
+          </p>
+          <div class="d-flex gap-2 mt-4">
+            <a href="#contact" class="btn-accent"><i class="bi bi-envelope"></i> Contact Me</a>
+            <a href="https://www.linkedin.com/in/ruby-tullis" target="_blank" class="btn-outline-accent"><i class="bi bi-linkedin"></i> LinkedIn</a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Content Area -->
   <main class="container my-5">
-    <section id="work-samples">
-      <h2 class="section-title mb-4">Work Samples & Portfolio</h2>
+    
+    <!-- Section 1: Portfolio Work Samples -->
+    <section id="portfolio" class="mb-5">
+      <h2 class="section-title">Featured Work Samples</h2>
 
-      <!-- Sample 1: Market Research Presentation -->
-      <div class="work-sample-card">
-        <span class="badge-custom badge-research">Market Research & Entry Strategy</span>
-        <h3>Italian Gelato Market Analysis Deck</h3>
+      <!-- Sample 1: Italian Gelato Deck -->
+      <div class="custom-card">
+        <span class="badge-custom badge-research">Market Research & Strategy</span>
+        <h3 class="fw-bold">Italian Gelato Market Analysis Deck</h3>
         <p class="text-muted mb-3">
-          <strong>Role:</strong> Marketing Intern &nbsp;|&nbsp; 
+          <strong>Role:</strong> Marketing & Market Research Intern &nbsp;|&nbsp; 
           <strong>Company:</strong> Made in Italy Research & Made in Italy ADV (Rome, Italy)
         </p>
         <p>
-          Developed a comprehensive market research presentation analyzing the <strong>€1.73B Italian packaged retail and artisanal gelato sectors</strong>. Evaluated consumer purchasing drivers, competitive dynamics between major packaged leaders (Algida, Ferrero, Sammontana) and artisanal gelaterias, and outlined strategic expansion recommendations.
+          Conducted comprehensive qualitative and quantitative market research on the €1.73B Italian packaged retail and artisanal gelato sectors. Evaluated competitive dynamics between packaged leaders (Algida, Ferrero, Sammontana) and traditional gelaterias to develop actionable expansion strategies.
         </p>
-        <ul>
-          <li><strong>Data & Forecasting:</strong> Synthesized industry data (ISTAT, IMARC Group) to model market growth (2.81% CAGR projected through 2034).</li>
-          <li><strong>Strategic Positioning:</strong> Identified hybrid retail models combining artisanal authenticity with scalable retail distribution.</li>
+        <ul class="mb-4">
+          <li><strong>Focus Groups & Field Data:</strong> Organized and documented in-person focus groups to analyze consumer behavior and purchasing drivers.</li>
+          <li><strong>Market Forecasting:</strong> Synthesized ISTAT and IMARC industry data to project growth trends (2.81% CAGR through 2034).</li>
+          <li><strong>Strategic Insights:</strong> Identified key growth opportunities in hybrid retail models and premium organic positioning.</li>
         </ul>
-        <a href="Italian Gelato Market Presentation pdf.pdf" target="_blank" class="btn-accent mt-2">
-          View Presentation Deck (PDF)
+        <a href="Italian Gelato Market Presentation pdf.pdf" target="_blank" class="btn-accent">
+          <i class="bi bi-file-earmark-pdf"></i> View Presentation Deck (PDF)
         </a>
       </div>
 
       <!-- Sample 2: Study Abroad Ambassador Reels -->
-      <div class="work-sample-card">
+      <div class="custom-card">
         <span class="badge-custom badge-social">Social Media & Video Marketing</span>
-        <h3>Study Abroad Ambassador Reels & Campaigns</h3>
+        <h3 class="fw-bold">CIEE Study Abroad Digital Campaign & Reels</h3>
         <p class="text-muted mb-3">
-          <strong>Role:</strong> Global Ambassador &nbsp;|&nbsp; 
-          <strong>Organization:</strong> Study Abroad Program
+          <strong>Role:</strong> Study Abroad Ambassador &nbsp;|&nbsp; 
+          <strong>Organization:</strong> CIEE Study Abroad (Rome, Italy)
         </p>
         <p>
-          Created short-form video marketing content and promotional Instagram Reels targeting prospective study abroad students. Focused on student life, cultural immersion, and practical travel guidance.
+          Executed short-form video marketing campaigns and social media outreach to drive program awareness among prospective students. Managed an ambassador Instagram account, producing trend-aware content strictly adhering to CIEE brand guidelines.
         </p>
-        <ul>
-          <li><strong>Content Creation:</strong> Filmed, edited, and published high-engagement short-form video reels.</li>
-          <li><strong>Audience Engagement:</strong> Boosted prospective student inquiry rates through authentic story-driven content.</li>
+        <ul class="mb-3">
+          <li><strong>Audience Growth:</strong> Built organic account following to 500+ followers during a single term.</li>
+          <li><strong>Impressions & Reach:</strong> Generated over 31,000+ total views and reached 4,600+ unique accounts across 15+ posted reels and carousels.</li>
         </ul>
 
         <!-- Direct Video Links -->
         <div class="reel-buttons">
           <a href="https://www.instagram.com/reel/YOUR_REEL_ID_HERE/" target="_blank" class="btn-outline-accent">
-            🎥 Ambassador Campaign Reel
+            <i class="bi bi-instagram"></i> Ambassador Campaign Reel
           </a>
           <a href="https://www.instagram.com/reel/YOUR_REEL_ID_HERE/" target="_blank" class="btn-outline-accent">
-            🇮🇹 Rome Student Life Reel
+            <i class="bi bi-camera-reels"></i> Rome Student Life Spotlight
           </a>
           <a href="https://www.instagram.com/reel/YOUR_REEL_ID_HERE/" target="_blank" class="btn-outline-accent">
-            📣 Program Outreach Reel
+            <i class="bi bi-megaphone"></i> Program Outreach Reel
           </a>
         </div>
       </div>
-
     </section>
+
+    <!-- Section 2: Core Skills & Competencies -->
+    <section id="skills" class="mb-5">
+      <h2 class="section-title">Skills & Certifications</h2>
+      <div class="custom-card">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-tools me-2 color-accent"></i>Software & Analytics</h5>
+            <div>
+              <span class="skill-tag">Microsoft Excel</span>
+              <span class="skill-tag">SPSS Statistics</span>
+              <span class="skill-tag">Canva</span>
+              <span class="skill-tag">Google Workspace</span>
+              <span class="skill-tag">PowerPoint</span>
+              <span class="skill-tag">Instagram Insights</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-graph-up-arrow me-2"></i>Marketing & Core Strengths</h5>
+            <div>
+              <span class="skill-tag">Brand Awareness</span>
+              <span class="skill-tag">Audience Engagement</span>
+              <span class="skill-tag">Market Research</span>
+              <span class="skill-tag">Event Promotion</span>
+              <span class="skill-tag">Qualitative Research</span>
+              <span class="skill-tag">Strategic Communication</span>
+              <span class="skill-tag">Fundraising & CRM</span>
+            </div>
+          </div>
+          <div class="col-12 mt-4 pt-3 border-top">
+            <p class="mb-0"><strong>Certifications:</strong> <span class="badge bg-light text-dark border ms-2"><i class="bi bi-patch-check-fill text-success me-1"></i> Mental Health First Aid Certificate (2023)</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Leadership & Involvement -->
+    <section id="leadership" class="mb-5">
+      <h2 class="section-title">Leadership & Campus Involvement</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="custom-card h-100">
+            <h5 class="fw-bold mb-1">Cal Poly American Marketing Association</h5>
+            <p class="text-muted small mb-2">Member | 2025 – Present</p>
+            <p class="small">Participate in strategy workshops, sales training, and brand development sessions while connecting with marketing professionals to analyze industry trends.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="custom-card h-100">
+            <h5 class="fw-bold mb-1">Delta Gamma Sorority</h5>
+            <p class="text-muted small mb-2">Banner Committee Member | 2024 – Present</p>
+            <p class="small">Lead visual branding and promotional signage for philanthropy events benefiting Service for Sight and the Blind Children Center.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="custom-card h-100">
+            <h5 class="fw-bold mb-1">Guide Dogs for the Blind & Poly Pups</h5>
+            <p class="text-muted small mb-2">Volunteer & Trainer | 2024 – Present</p>
+            <p class="small">Assist in training and socializing service dogs and guide dogs for individuals with visual impairments.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="custom-card h-100">
+            <h5 class="fw-bold mb-1">Be My Eyes Volunteer</h5>
+            <p class="text-muted small mb-2">Live Video Support Volunteer | 2024 – Present</p>
+            <p class="small">Provide real-time visual assistance via live video support to help visually impaired individuals navigate daily tasks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer / Contact Section -->
+  <footer class="contact-section" id="contact">
+    <div class="container">
+      <div class="text-center max-width-600 mx-auto mb-5">
+        <h2 class="section-title d-inline-block">Get In Touch</h2>
+        <p class="text-muted">I am actively seeking marketing strategy and content roles. Let's connect!</p>
+      </div>
+      
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="contact-card">
+            <i class="bi bi-envelope-at-fill fs-2 text-accent mb-2" style="color: var(--accent-primary);"></i>
+            <h6 class="fw-bold">Email</h6>
+            <a href="mailto:rubytullis@icloud.com" class="contact-link">rubytullis@icloud.com</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card">
+            <i class="bi bi-telephone-fill fs-2 mb-2" style="color: var(--accent-primary);"></i>
+            <h6 class="fw-bold">Phone</h6>
+            <a href="tel:9492357095" class="contact-link">(949) 235-7095</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card">
+            <i class="bi bi-linkedin fs-2 mb-2" style="color: var(--accent-primary);"></i>
+            <h6 class="fw-bold">LinkedIn</h6>
+            <a href="https://www.linkedin.com/in/ruby-tullis" target="_blank" class="contact-link">linkedin.com/in/ruby-tullis</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 pt-4 border-top border-secondary-subtle">
+        <p class="small text-muted mb-0">&copy; 2026 Ruby Tullis. Built with Bootstrap & hosted on GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
