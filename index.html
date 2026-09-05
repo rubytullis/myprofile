@@ -1,745 +1,218 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruby Tullis | Marketing & Social Strategy Profile</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Palette directly sampled & tuned to portrait */
-            --bg-main: #F7F5F3;          /* Warm neutral off-white background */
-            --card-bg: #FFFFFF;          /* Soft crisp white */
-            --text-heading: #23121B;     /* Deep, elegant charcoal-plum */
-            --text-body: #4A3E47;        /* Soft neutral plum-grey for readable prose */
-            --text-muted: #7E7079;       /* Delicate secondary text */
-            
-            --plum-primary: #582138;     /* Rich deep berry lipstick accent */
-            --plum-hover: #3D1426;       /* Darker berry for active states */
-            --plum-soft: #F4ECEF;        /* Ultra-soft pastel pinkish plum background tint */
-            
-            --gold-accent: #CBA258;      /* Delicate gold from heart necklace */
-            --gold-light: #FAF5E8;       /* Very light warm gold glow tint */
-            
-            --border-light: #E8E0E4;     /* Soft hair-line border */
-            --border-accent: #D6C2CC;    /* Subtle highlighted border */
-            
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --shadow-subtle: 0 10px 30px rgba(88, 33, 56, 0.04);
-            --shadow-card: 0 14px 35px rgba(35, 18, 27, 0.05);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby Tullis | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fcf8f8;            /* Warm off-white background */
+      --card-bg: #ffffff;             /* Crisp white card background */
+      --text-primary: #1f1a1c;        /* Deep charcoal for body text */
+      --text-muted: #6b5e65;          /* Soft mauve-gray for secondary text */
+      --accent-primary: #7d3f58;      /* Deep plum/berry accent matching headshot */
+      --accent-soft: #f2e6ea;         /* Light blush tint for tags & borders */
+      --accent-gold: #d4af37;         /* Warm gold accent */
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-body);
-            font-family: var(--font-sans);
-            line-height: 1.65;
-            padding: 3rem 1rem;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* Hero Section */
+    .hero-section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--accent-soft);
+    }
 
-        .container {
-            max-width: 920px;
-            margin: 0 auto;
-        }
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--card-bg);
+      box-shadow: 0 8px 20px rgba(125, 63, 88, 0.15);
+    }
 
-        /* Typography Elegance */
-        h1, h2, h3, .font-heading {
-            font-family: var(--font-display);
-            color: var(--text-heading);
-            letter-spacing: -0.01em;
-        }
+    .section-title {
+      color: var(--accent-primary);
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 10px;
+    }
 
-        /* Header / Hero Card */
-        header {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-card);
-            position: relative;
-            overflow: hidden;
-        }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent-gold);
+    }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--plum-primary) 0%, var(--gold-accent) 100%);
-        }
+    /* Category Badges */
+    .badge-custom {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
 
-        .hero-layout {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
+    .badge-research {
+      background-color: var(--accent-soft);
+      color: var(--accent-primary);
+    }
 
-        .photo-wrapper {
-            position: relative;
-        }
+    .badge-social {
+      background-color: #eef4ff;
+      color: #2b5288;
+    }
 
-        .profile-photo {
-            width: 155px;
-            height: 155px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--gold-accent);
-            padding: 4px;
-            background: var(--card-bg);
-            box-shadow: 0 8px 25px rgba(88, 33, 56, 0.12);
-        }
+    /* Work Sample Cards */
+    .work-sample-card {
+      background: var(--card-bg);
+      border: 1px solid var(--accent-soft);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(125, 63, 88, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        .hero-details h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 0.35rem;
-            color: var(--text-heading);
-        }
+    .work-sample-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(125, 63, 88, 0.08);
+    }
 
-        .hero-title {
-            font-size: 1.15rem;
-            color: var(--plum-primary);
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+    .btn-accent {
+      background-color: var(--accent-primary);
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.2s ease;
+    }
 
-        .hero-title::after {
-            content: '';
-            display: inline-block;
-            width: 30px;
-            height: 1px;
-            background-color: var(--gold-accent);
-        }
+    .btn-accent:hover {
+      background-color: #612f43;
+      color: #ffffff;
+    }
 
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-        }
+    .btn-outline-accent {
+      background-color: transparent;
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.65rem 1.35rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
-            letter-spacing: 0.01em;
-        }
+    .btn-outline-accent:hover {
+      background-color: var(--accent-soft);
+      color: var(--accent-primary);
+    }
 
-        .btn-primary {
-            background-color: var(--plum-primary);
-            color: #ffffff;
-            border: 1px solid var(--plum-primary);
-            box-shadow: 0 4px 14px rgba(88, 33, 56, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--plum-hover);
-            border-color: var(--plum-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(88, 33, 56, 0.28);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-heading);
-            border: 1px solid var(--border-accent);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--plum-primary);
-            color: var(--plum-primary);
-            background-color: var(--plum-soft);
-            transform: translateY(-2px);
-        }
-
-        .hero-bio {
-            margin-top: 2rem;
-            padding-top: 1.75rem;
-            border-top: 1px solid var(--border-light);
-            color: var(--text-body);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        /* Aesthetics Metrics Grid */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .metric-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-subtle);
-            position: relative;
-        }
-
-        .metric-value {
-            font-family: var(--font-display);
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--plum-primary);
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        /* Section Layouts */
-        section {
-            margin-bottom: 2.75rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-heading);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--border-accent), transparent);
-        }
-
-        .samples-intro {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.98rem;
-        }
-
-        /* Cards & Work Samples */
-        .samples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .sample-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: var(--shadow-subtle);
-            transition: all 0.3s ease;
-        }
-
-        .sample-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-accent);
-            box-shadow: var(--shadow-card);
-        }
-
-        .sample-tag {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--gold-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.6rem;
-        }
-
-        .sample-title {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            line-height: 1.25;
-            margin-bottom: 0.6rem;
-        }
-
-        .sample-desc {
-            font-size: 0.92rem;
-            color: var(--text-body);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .timeline-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.85rem;
-            border-bottom: 1px dashed var(--border-light);
-        }
-
-        .job-title {
-            font-family: var(--font-display);
-            font-size: 1.45rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            line-height: 1.2;
-        }
-
-        .job-company {
-            color: var(--plum-primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-top: 0.15rem;
-        }
-
-        .job-date {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            background: var(--plum-soft);
-            color: var(--plum-primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .timeline-body ul {
-            list-style: none;
-        }
-
-        .timeline-body li {
-            position: relative;
-            padding-left: 1.35rem;
-            margin-bottom: 0.65rem;
-            font-size: 0.96rem;
-            color: var(--text-body);
-        }
-
-        .timeline-body li::before {
-            content: '♦';
-            color: var(--gold-accent);
-            font-size: 0.7rem;
-            position: absolute;
-            left: 0;
-            top: 0.15rem;
-        }
-
-        /* Two-Column Grid */
-        .two-col {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow-subtle);
-            height: 100%;
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--plum-soft);
-        }
-
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: var(--plum-soft);
-            color: var(--plum-primary);
-            border: 1px solid var(--border-light);
-            padding: 0.4rem 0.85rem;
-            border-radius: 20px;
-            font-size: 0.83rem;
-            font-weight: 500;
-        }
-
-        /* Contact Section */
-        .contact-card {
-            background: linear-gradient(145deg, #FFFFFF 0%, var(--plum-soft) 100%);
-            border: 1px solid var(--border-accent);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-card);
-        }
-
-        .contact-card h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-card p {
-            color: var(--text-body);
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            font-size: 1.02rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.25rem;
-        }
-
-        .contact-method-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 40px;
-            padding: 0.85rem 1.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-            text-decoration: none;
-            color: var(--text-heading);
-            font-weight: 600;
-            font-size: 0.95rem;
-            box-shadow: var(--shadow-subtle);
-            transition: all 0.25s ease;
-        }
-
-        .contact-method-item:hover {
-            border-color: var(--plum-primary);
-            color: var(--plum-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(88, 33, 56, 0.12);
-        }
-
-        .contact-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-color: var(--plum-soft);
-            color: var(--plum-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem 0 1rem 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1.5rem 0.75rem;
-            }
-            header {
-                padding: 2rem 1.5rem;
-            }
-            .hero-layout {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 1.5rem;
-            }
-            .photo-wrapper {
-                margin: 0 auto;
-            }
-            .hero-title {
-                justify-content: center;
-            }
-            .contact-links {
-                justify-content: center;
-            }
-            .contact-methods {
-                flex-direction: column;
-            }
-            .contact-method-item {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    .reel-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Hero Header -->
+  <header class="hero-section">
     <div class="container">
-        
-        <!-- Hero Header -->
-        <header>
-            <div class="hero-layout">
-                <div class="photo-wrapper">
-                    <!-- Headshot image file -->
-                    <img src="headshot.jpg" alt="Ruby Tullis Profile Headshot" class="profile-photo">
-                </div>
-                <div class="hero-details">
-                    <h1>Ruby Tullis</h1>
-                    <div class="hero-title">Marketing & Social Media Strategist</div>
-                    <div class="contact-links">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="https://www.linkedin.com/in/ruby-tullis" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-bio">
-                <p>Rising Junior at California Polytechnic State University studying Sociology with a concentration in Social Marketing. Experienced in creating branded digital media, executing strategic social campaigns, conducting qualitative market research, and engaging target audiences through data-driven storytelling.</p>
-            </div>
-        </header>
-
-        <!-- Quick Campaign Stats -->
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-value">31,000+</div>
-                <div class="metric-label">Content Views Generated</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">4,600+</div>
-                <div class="metric-label">Accounts Reached</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">15+</div>
-                <div class="metric-label">Branded Social Posts</div>
-            </div>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <img src="headshot.jpg" alt="Ruby Tullis Profile Headshot" class="profile-photo">
         </div>
-
-        <!-- Work Samples Section -->
-        <section>
-            <h2 class="section-title">Selected Work Samples</h2>
-            <p class="samples-intro">Below are selected campaign executions highlighting social engagement, prospective student outreach, and brand storytelling.</p>
-            
-            <div class="samples-grid">
-                
-                <div class="sample-card">
-                    <div>
-                        <div class="sample-tag">Instagram Reel</div>
-                        <div class="sample-title">CIEE Study Abroad Ambassador Campaign</div>
-                        <div class="sample-desc">Created social media content to promote CIEE study abroad programs, engage prospective students, and follow established brand guidelines.</div>
-                    </div>
-                    <a href="https://www.instagram.com/reel/DXxEB9oo3BP/" target="_blank" rel="noopener" class="btn btn-outline">View Reel</a>
-                </div>
-
-                <div class="sample-card">
-                    <div>
-                        <div class="sample-tag">Instagram Reel</div>
-                        <div class="sample-title">Study Abroad Feature Reel</div>
-                        <div class="sample-desc">Dynamic short-form reel highlighting authentic student living and cultural immersion experiences in Rome, Italy.</div>
-                    </div>
-                    <a href="https://www.instagram.com/reel/DYj2TN2ozQz/" target="_blank" rel="noopener" class="btn btn-outline">View Reel</a>
-                </div>
-
-                <div class="sample-card">
-                    <div>
-                        <div class="sample-tag">Carousel Post</div>
-                        <div class="sample-title">Brand Awareness Carousel</div>
-                        <div class="sample-desc">Visual narrative post crafted in accordance with program messaging and required hashtag strategy to maximize reach.</div>
-                    </div>
-                    <a href="https://www.instagram.com/p/DXE5MZDiKdC/" target="_blank" rel="noopener" class="btn btn-outline">View Post</a>
-                </div>
-
-                <div class="sample-card">
-                    <div>
-                        <div class="sample-tag">Instagram Reel</div>
-                        <div class="sample-title">Student Engagement Spotlight</div>
-                        <div class="sample-desc">Targeted engagement video designed to address prospective student questions and build online community.</div>
-                    </div>
-                    <a href="https://www.instagram.com/reel/DZD0MLRoZqh/" target="_blank" rel="noopener" class="btn btn-outline">View Reel</a>
-                </div>
-
-                <div class="sample-card">
-                    <div>
-                        <div class="sample-tag">Instagram Reel</div>
-                        <div class="sample-title">Program Outreach Reel</div>
-                        <div class="sample-desc">High-performing video content leveraging trend-aware audio and partner tags to extend program visibility.</div>
-                    </div>
-                    <a href="https://www.instagram.com/reel/DXZguxMIFv5/" target="_blank" rel="noopener" class="btn btn-outline">View Reel</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section>
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="timeline">
-                
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="job-title">Study Abroad Ambassador</div>
-                            <div class="job-company">CIEE Study Abroad • Rome, Italy</div>
-                        </div>
-                        <div class="job-date">Spring & Summer 2026</div>
-                    </div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Promoted CIEE study abroad programs through strategic social media marketing and student outreach[cite: 1].</li>
-                            <li>Created and managed a dedicated Instagram account, growing the audience to 507 followers[cite: 1].</li>
-                            <li>Produced 15+ branded social media posts across two study abroad terms, generating 31,000+ views and reaching 4,600+ accounts[cite: 1].</li>
-                            <li>Executed content in accordance with CIEE brand guidelines, incorporating required messaging, hashtags, and partner tags[cite: 1].</li>
-                            <li>Represented CIEE by sharing authentic study abroad experiences and engaging directly with prospective students[cite: 1].</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="job-title">Marketing and Market Research Intern</div>
-                            <div class="job-company">Made in Italy Pubblicità & Marketing • Rome, Italy</div>
-                        </div>
-                        <div class="job-date">Summer 2026</div>
-                    </div>
-                    <div class="timeline-body">
-                        <ul>
-                            <li>Supported marketing and consumer research initiatives for an Italy-based advertising and market research firm[cite: 1].</li>
-                            <li>Conducted and documented in-person focus groups, collecting qualitative data and organizing key research findings[cite: 1].</li>
-                            <li>Analyzed consumer feedback to identify market trends and generate actionable insights for branding strategies[cite: 1].</li>
-                            <li>Collaborated with an international team on branding and strategic marketing projects in a cross-cultural professional environment[cite: 1].</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Education & Skills Two-Column Grid -->
-        <div class="two-col" style="margin-bottom: 2.5rem;">
-            
-            <div class="info-card">
-                <h3>Education</h3>
-                <p style="font-weight: 600; color: var(--text-heading);">California Polytechnic State University</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">San Luis Obispo, CA</p>
-                
-                <p style="font-size: 0.95rem;"><strong>Bachelor of Arts in Sociology</strong><br><span style="color: var(--plum-primary); font-weight: 500;">Concentration in Social Marketing</span>[cite: 1]</p>
-                <p style="margin-top: 0.75rem; font-size: 0.9rem;"><strong>Expected Graduation:</strong> June 2028[cite: 1]</p>
-                <p style="font-size: 0.9rem;"><strong>GPA:</strong> 3.88 (Dean's List & President's List)[cite: 1]</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Core Capabilities</h3>
-                
-                <p style="font-size: 0.75rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Marketing & Strategy</p>
-                <div class="tag-cloud" style="margin-bottom: 1.25rem;">
-                    <span class="tag">Brand Awareness</span>
-                    <span class="tag">Audience Engagement</span>
-                    <span class="tag">Social Media Marketing</span>
-                    <span class="tag">Qualitative Research</span>
-                    <span class="tag">Event Promotion</span>
-                    <span class="tag">Strategic Communication</span>
-                </div>
-
-                <p style="font-size: 0.75rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Software & Tools</p>
-                <div class="tag-cloud">
-                    <span class="tag">Canva</span>
-                    <span class="tag">Google Workspace</span>
-                    <span class="tag">Microsoft Excel</span>
-                    <span class="tag">PowerPoint</span>
-                    <span class="tag">SPSS</span>
-                </div>
-            </div>
-
+        <div class="col-md-8">
+          <h1 class="display-4 fw-bold mb-2">Ruby Tullis</h1>
+          <p class="lead text-muted mb-3">Marketing Specialist | Market Research & Digital Content Strategy</p>
+          <p>
+            Welcome to my portfolio! Here you'll find a collection of my professional work samples, ranging from international market analysis decks to social media campaign strategy.
+          </p>
         </div>
-
-        <!-- Leadership & Community Involvement -->
-        <section>
-            <div class="info-card">
-                <h3>Leadership & Community Involvement</h3>
-                <div class="timeline-body">
-                    <ul>
-                        <li><strong>Cal Poly American Marketing Association (2025–Present):</strong> Participate in strategy development, sales training, and branding workshops[cite: 1].</li>
-                        <li><strong>Delta Gamma Sorority - Banner Committee (2024–Present):</strong> Support visual branding and promotional efforts for philanthropy initiatives[cite: 1].</li>
-                        <li><strong>Service For Sight & Blind Children Center (2024–Present):</strong> Organize fundraising campaigns and assemble care packages supporting youth[cite: 1].</li>
-                        <li><strong>Poly Pups & Guide Dogs for the Blind (2024–Present):</strong> Assist in socializing and training service dogs for individuals with visual impairments[cite: 1].</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-card">
-                <h2>Let's Connect</h2>
-                <p>I am always open to discussing new opportunities, social marketing strategies, or prospective collaborations.</p>
-                
-                <div class="contact-methods">
-                    <a href="mailto:rubytullis@icloud.com" class="contact-method-item">
-                        <div class="contact-icon">✉</div>
-                        <span>rubytullis@icloud.com</span>
-                    </a>
-                    
-                    <a href="tel:9492357095" class="contact-method-item">
-                        <div class="contact-icon">📞</div>
-                        <span>(949) 235-7095</span>
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/ruby-tullis" target="_blank" rel="noopener" class="contact-method-item">
-                        <div class="contact-icon">in</div>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Ruby Tullis • Portfolio & Marketing Profile</p>
-        </footer>
-
+      </div>
     </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <section id="work-samples">
+      <h2 class="section-title mb-4">Work Samples & Portfolio</h2>
+
+      <!-- Sample 1: Market Research Presentation -->
+      <div class="work-sample-card">
+        <span class="badge-custom badge-research">Market Research & Entry Strategy</span>
+        <h3>Italian Gelato Market Analysis Deck</h3>
+        <p class="text-muted mb-3">
+          <strong>Role:</strong> Marketing Intern &nbsp;|&nbsp; 
+          <strong>Company:</strong> Made in Italy Research & Made in Italy ADV (Rome, Italy)[cite: 2]
+        </p>
+        <p>
+          Developed a comprehensive market research presentation analyzing the <strong>€1.73B Italian packaged retail and artisanal gelato sectors</strong>[cite: 2]. Evaluated consumer purchasing drivers, competitive dynamics between major packaged leaders (Algida, Ferrero, Sammontana) and artisanal gelaterias, and outlined strategic expansion recommendations[cite: 2].
+        </p>
+        <ul>
+          <li><strong>Data & Forecasting:</strong> Synthesized industry data (ISTAT, IMARC Group) to model market growth (2.81% CAGR projected through 2034)[cite: 2].</li>
+          <li><strong>Strategic Positioning:</strong> Identified hybrid retail models combining artisanal authenticity with scalable retail distribution[cite: 2].</li>
+        </ul>
+        <a href="Italian Gelato Market Presentation pdf.pdf" target="_blank" class="btn-accent mt-2">
+          View Presentation Deck (PDF)
+        </a>
+      </div>
+
+      <!-- Sample 2: Study Abroad Ambassador Reels -->
+      <div class="work-sample-card">
+        <span class="badge-custom badge-social">Social Media & Video Marketing</span>
+        <h3>Study Abroad Ambassador Reels & Campaigns</h3>
+        <p class="text-muted mb-3">
+          <strong>Role:</strong> Global Ambassador &nbsp;|&nbsp; 
+          <strong>Organization:</strong> Study Abroad Program
+        </p>
+        <p>
+          Created short-form video marketing content and promotional Instagram Reels targeting prospective study abroad students. Focused on student life, cultural immersion, and practical travel guidance.
+        </p>
+        <ul>
+          <li><strong>Content Creation:</strong> Filmed, edited, and published high-engagement short-form video reels.</li>
+          <li><strong>Audience Engagement:</strong> Boosted prospective student inquiry rates through authentic story-driven content.</li>
+        </ul>
+
+        <!-- Direct Video Links -->
+        <div class="reel-buttons">
+          <a href="https://www.instagram.com/reel/YOUR_REEL_ID_HERE/" target="_blank" class="btn-outline-accent">
+            🎥 Ambassador Campaign Reel
+          </a>
+          <a href="https://www.instagram.com/reel/YOUR_REEL_ID_HERE/" target="_blank" class="btn-outline-accent">
+            🇮🇹 Rome Student Life Reel
+          </a>
+          <a href="https://www.instagram.com/reel/YOUR_REEL_ID_HERE/" target="_blank" class="btn-outline-accent">
+            📣 Program Outreach Reel
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
 
 </body>
 </html>
